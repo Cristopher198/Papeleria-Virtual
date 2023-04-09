@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrusel de Imagenes</title>
+    <style type="text/css">
+
+        #carrusel { 
+            margin: 50px auto; 
+            width: 600px; 
+            height: 400px; 
+            position: relative; 
+        }
+
+        #carrusel ul { 
+            position: absolute; 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            width: 100%; 
+            height: 100%; 
+
+        }
+
+        #carrusel ul li { 
+            position: absolute; 
+            display: none;  
+
+        }
+
+        #carrusel ul li img {  
+
+        }
+
+    </style>    														   <!-- Estilos -->    
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> <!-- JQuery -->    
+
+    <script type="text/javascript">                                                             <!-- Funciones -->    
+
+        $(document).ready(function(){   //Cuando el documento esta listo...  
+
+          //Definimos la variable que contendra el numero de imagenes que hay en el carrusel  
+
+          var imagenes = $("#carrusel ul li").size();   //Contamos cuantas imagenes hay en el carrusel y lo guardamos en la variable "imagenes"  
+
+          var x = 1;       //Definimos una variable para llevar la cuenta de cuantas imagenes se han mostrado  
+
+          $("#carrusel ul li").hide();      //Ocultamos todas las imagenes del carrusel al iniciar la pagina web  
+
+          $("#carrusel ul li:first").show();      //Mostramos la primera imagen del carrusel al iniciar la pagina web  
+
+          setInterval(function(){      //Creamos un intervalo para que se vayan mostrando las imagenes cada cierto tiempo (3 segundos)  
+
+              if(x < imagenes){      //Si el numero de la variable "x" es menor que el numero de imagenes que hay en el carrusel...  
+
+                  x++;     //Aumentamos en 1 el valor de "x" para pasar a mostrar la siguiente imagen del carrusel...  
